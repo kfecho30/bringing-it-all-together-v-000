@@ -9,7 +9,7 @@ class Dog
   end
 
   def save(name, breed)
-    dog = Dog.new(name, breed)
+    dog = Dog.new(name: name, breed: breed)
     DB[:conn].execute("INSERT INTO dogs (name, breed) VALUES (?, ?);", name, breed)
     @id = DB[:conn].execute("SELECT last_insert_rowid FROM dogs;")
     dog
