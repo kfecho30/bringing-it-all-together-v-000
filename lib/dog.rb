@@ -10,7 +10,8 @@ class Dog
 
   def create(name, breed)
     dog = Dog.new(name, breed)
-    DB[:conn].execute("INSERT INTO dogs (name, breed) VALUES (?, ?)")
+    DB[:conn].execute("INSERT INTO dogs (name, breed) VALUES (?, ?)", name, breed)
+
   end
 
 
