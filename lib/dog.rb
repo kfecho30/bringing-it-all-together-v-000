@@ -16,6 +16,7 @@ class Dog
 
   def self.create(params)
     dog = Dog.new(params[:name], params[:breed])
+    dog.save
   end
 
 
