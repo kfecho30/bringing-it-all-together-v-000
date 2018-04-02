@@ -20,6 +20,12 @@ class Dog
   def update
   end
 
+  def self.find_by_name(name)
+  end
+
+  def self.find_or_create_by
+  end
+
   def self.create(name:, breed:)
     dog = Dog.new(name: name, breed: breed)
     dog.save
