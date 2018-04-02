@@ -1,6 +1,6 @@
 class Dog
   attr_accessor :name, :breed, :id
-  
+
   def initialize(name:, breed:, id:nil)
     @name = name
     @breed = breed
@@ -32,7 +32,7 @@ class Dog
     SQL
     DB[:conn].execute(sql, id).map do |row|
       self.new_from_db(row)
-    end
+    end.first
   end
 
   def self.create_table
