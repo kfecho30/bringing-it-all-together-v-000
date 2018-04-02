@@ -32,7 +32,7 @@ class Dog
       WHERE id = ?;
     SQL
     DB[:conn].execute(sql, id).map do |row|
-      Dog.new(name: row[1], breed: row[2], id: row[0])
+      self.new_from_db(row)
     end
   end
 
