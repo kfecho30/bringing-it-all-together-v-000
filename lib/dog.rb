@@ -11,7 +11,7 @@ class Dog
   def create(name, breed)
     dog = Dog.new(name, breed)
     DB[:conn].execute("INSERT INTO dogs (name, breed) VALUES (?, ?)", name, breed)
-
+    @id = DB[:conn].execute("SELECT last_insert_rowid FROM dogs;")
   end
 
 
