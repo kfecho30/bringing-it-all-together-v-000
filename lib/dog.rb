@@ -15,5 +15,6 @@ class Dog
     sql = <<-SQL
       CREATE TABLE IF NOT EXISTS dogs;
     SQL
+    DB[:conn].execute(sql)
   end
 end
