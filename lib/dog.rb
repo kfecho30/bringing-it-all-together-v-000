@@ -24,8 +24,9 @@ class Dog
       SELECT * FROM dogs
       WHERE id = ?;
     SQL
-
-    DB[:conn].execute(sql, id)
+    DB[:conn].execute(sql, id).map do |row|
+      Dog.new(name: row[1], breed: row[2], id: row[0])
+    end
   end
 
   def self.create_table
