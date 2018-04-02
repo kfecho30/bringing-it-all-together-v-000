@@ -18,6 +18,12 @@ class Dog
   end
 
   def update
+    sql = <<-SQL
+      UPDATE dogs
+      SET name = ?, album = ?
+      WHERE id = ?;
+    SQL
+    
   end
 
   def self.find_by_name(name)
