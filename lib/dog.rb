@@ -26,7 +26,7 @@ class Dog
       WHERE name = ?;
     SQL
     dog = DB[:conn].execute(sql, name)[0]
-    new_from_db(dog)
+    self.new_from_db(dog)
   end
 
   def self.find_or_create_by
