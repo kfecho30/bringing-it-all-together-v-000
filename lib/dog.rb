@@ -8,6 +8,11 @@ class Dog
     @id = id
   end
 
+  def create(name, breed)
+    dog = Dog.new(name, breed)
+    DB[:conn].execute("INSERT INTO dogs (name, breed) VALUES (?, ?)")
+  end
+
 
 
 
